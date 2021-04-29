@@ -1,0 +1,5 @@
+﻿name = 'Hallway 3.0'
+version = '1.0'
+author = 'CorellanStoma'
+description = 'A new version of a Hallway Map.'
+extensions = { 'water_damage' : 25 }
