@@ -1,6 +1,6 @@
 [![Community](https://raw.githubusercontent.com/CorellanStoma/CorellanStoma/master/shields/community.png)](https://discord.gg/8W8E39Z)
 [![Wiki](https://raw.githubusercontent.com/CorellanStoma/CorellanStoma/master/shields/wiki.png)](https://crearts.wiki/)
-[![License](https://raw.githubusercontent.com/CorellanStoma/CorellanStoma/master/shields/license.png)](https://raw.githubusercontent.com/CorellanStoma/CreArts/master/license.md)
+[![License](https://raw.githubusercontent.com/CorellanStoma/CorellanStoma/master/shields/license.png)](https://raw.githubusercontent.com/CorellanStoma/Ace-of-Spades/main/license.md)
 
 <h1 align=center> Ace of Spades</h1>
 <h3 align=center> Some Custom Ace of Spades Maps. </h3>
