@@ -1,0 +1,24 @@
+name = 'Hallway C.2'
+version = '1.0'
+author = 'CorellanStoma'
+description = 'This is a new interpretation of the Hallway map concept from Izzy.'
+extensions = {
+	'water_damage' : 100
+}
+
+from pyspades.constants import *
+import random
+
+def get_entity_location(team, entity_id):
+
+    if entity_id == BLUE_BASE:
+        return (64, 256, 12)
+
+    if entity_id == BLUE_FLAG:
+        return (44, 256, 12)
+
+    if entity_id == GREEN_BASE:
+        return (448, 256, 12)
+
+    if entity_id == GREEN_FLAG:
+        return (468, 256, 12)
