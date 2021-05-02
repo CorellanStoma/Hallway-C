@@ -5,13 +5,11 @@
 <h1 align=center> Ace of Spades</h1>
 <h3 align=center> Some Custom Ace of Spades Maps. </h3>
 
+## Hallway C.1
+![Hallway C 1](https://user-images.githubusercontent.com/58918358/116804824-40d6f880-ab22-11eb-8464-20db0efd01e2.png)
 
-## Hallway 3.0
+## Hallway C.2
+![Hallway C 2](https://user-images.githubusercontent.com/58918358/116804825-42082580-ab22-11eb-9e7b-7b1645932c98.png)
 
-![image](https://user-images.githubusercontent.com/58918358/116629475-9f994800-a951-11eb-8742-ec35cc0ba3ec.png)
-
-![image](https://user-images.githubusercontent.com/58918358/116629700-17677280-a952-11eb-97e8-1449ba16b26a.png)
-
-![image](https://user-images.githubusercontent.com/58918358/116631118-c2792b80-a954-11eb-965b-07a244740e7a.png)
-
-![image](https://user-images.githubusercontent.com/58918358/116629782-4f6eb580-a952-11eb-9652-9db9f6a48d63.png)
+## Hallway C.3
+![Hallway C 3](https://user-images.githubusercontent.com/58918358/116804826-42a0bc00-ab22-11eb-945b-4db3c1b869ca.png)
