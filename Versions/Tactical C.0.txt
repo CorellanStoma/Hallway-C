@@ -1,0 +1,61 @@
+name = 'Tactical C.0'
+version = '1.0'
+author = 'CumCo, CorellanStoma'
+description = 'This is a new interpretation of the Tactical Hallway map concept from CumCo.'
+fog = (170, 180, 240)
+extensions = {'water_damage' : 0,}
+
+
+from pyspades.server import ServerConnection
+from pyspades.constants import *
+import random
+
+def get_entity_location(team, entity_id):
+
+    if entity_id == BLUE_BASE:
+        return (96, 256, 59)
+
+    if entity_id == BLUE_FLAG:
+        return (256, 256, 30)
+
+    if entity_id == GREEN_BASE:
+        return (416, 256, 59)
+
+    if entity_id == GREEN_FLAG:
+        return (256, 256, 30)
+
+spawn_locations_blue = [
+    (85, 246, 55),
+    (105, 245, 55),
+    (105, 266, 55),
+    (84, 267, 55),
+    (92, 256, 55),
+    (65, 256, 55),
+    (82, 227, 55),
+    (83, 283, 55),
+]
+
+spawn_locations_green = [
+    (405, 266, 55),
+    (406, 244, 55),
+    (426, 245, 55),
+    (427, 265, 55),
+    (420, 255, 55),
+    (446, 256, 55),
+    (432, 227, 55),
+    (429, 283, 55),
+]
+
+def get_spawn_location(connection):
+    if connection.team is connection.protocol.blue_team:
+        x, y, z = random.choice(spawn_locations_blue)
+    elif connection.team is connection.protocol.green_team:
+        x, y, z = random.choice(spawn_locations_green)
+    z -= 0 # magic numbers
+    x += 0.5
+    y += 0.5
+    if connection.protocol.map.get_z(x, y) <= z:
+        # allows spawning lower if the ground is destroyed
+        return x, y, z
+    else:
+        return x, y, connection.protocol.map.get_z(x, y)

@@ -1,0 +1,60 @@
+name = 'Towers C.2'
+version = '1.0'
+author = 'Ug, CorellanStoma'
+description = 'This is a new interpretation of the Tower Wars map concept from Ug.'
+fog = (170, 180, 240)
+extensions = {'water_damage' : 100,}
+
+from pyspades.server import ServerConnection
+from pyspades.constants import *
+import random
+
+def get_entity_location(team, entity_id):
+
+    if entity_id == BLUE_BASE:
+        return (160, 160, 32)
+
+    if entity_id == BLUE_FLAG:
+        return (224, 224, 0)
+
+    if entity_id == GREEN_BASE:
+        return (352, 352, 32)
+
+    if entity_id == GREEN_FLAG:
+        return (288, 288, 0)
+
+spawn_locations_blue = [
+    (149, 149, 16),
+    (161, 148, 16),
+    (169, 169, 16),
+    (151, 170, 16),
+    (158, 192, 16),
+    (179, 160, 16),
+    (192, 159, 16),
+    (168, 148, 16),
+]
+
+spawn_locations_green = [
+    (362, 363, 16),
+    (363, 340, 16),
+    (341, 342, 16),
+    (341, 364, 16),
+    (332, 353, 16),
+    (314, 353, 16),
+    (353, 330, 16),
+    (352, 313, 16),
+]
+
+def get_spawn_location(connection):
+    if connection.team is connection.protocol.blue_team:
+        x, y, z = random.choice(spawn_locations_blue)
+    elif connection.team is connection.protocol.green_team:
+        x, y, z = random.choice(spawn_locations_green)
+    z -= 0 # magic numbers
+    x += 0.5
+    y += 0.5
+    if connection.protocol.map.get_z(x, y) <= z:
+        # allows spawning lower if the ground is destroyed
+        return x, y, z
+    else:
+        return x, y, connection.protocol.map.get_z(x, y)
